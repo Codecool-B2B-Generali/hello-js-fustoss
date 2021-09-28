@@ -1,15 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello JS</title>
 </head>
+
 <body>
-  <div>
+  <!-- <div>
     Open the developer console by right clicking anywhere inside the page and selecting
     <strong>Inspect (chrome) or Inspect Element (firefox)</strong>
-  </div>
+  </div> -->
+
+  <p>My page</p>
+  
+  <script>
+    //1.feladat : alert
+    alert( 'Hello World - Alert' );
+    
+    //2.feladat : console hello
+    console.log("Hello World - Console");
+    
+    //3.feladat : console óra
+    let currentdate = new Date();
+    let time = currentdate.getHours() + ':' +
+               currentdate.getMinutes();
+    console.log(time)
+
+    //4.feladat : console összeadás
+    let num1str = '';
+    let num2str = '';
+    let num1 = 0;
+    let num2 = 0;
+    let result = 0;
+    
+    num1str = prompt('First number');
+    num1 = parseInt(num1str);
+    
+    while (isNaN(num1) == true) {
+      alert(num1str + ' is not a number');
+      num1str = prompt('First number');
+      num1 = parseInt(num1str);
+    }
+
+    num2str = prompt('Second number');
+    num2 = parseInt(num2str);
+    while (isNaN(num2) == true) {
+      alert(num2str + 'is not a number');
+      num2str = prompt('Second number');
+      num2 = parseInt(num2str);
+    }
+
+    result = num1 + num2;
+    console.log(num1 + '+' + num2 + '=' + result);
+
+    //5.feladat - betűk
+    let word = '';
+    let letter = '';
+    let index = 0;
+    word = prompt('Type a word');
+    for (index = 0; index < word.length; index++) {
+      letter = word.charAt(index);
+      console.log(letter);
+    }
+    console.log('Number of characters: ' + word.length);
+
+    let spaces = word.split(' ').length -1;
+    let length2 = word.length - spaces;
+    console.log('Number of characters without spaces: ' + length2);
+
+    //6.feladat - fordítva
+    letter = ''
+    for (index = word.length; index >= 0; index--) {
+      letter = letter + word.charAt(index);
+    }
+    console.log(letter);
+
+    //7.feladat - páratlan számok
+    num1str = prompt('Number to count');
+    num1 = parseInt(num1str);
+    
+    while (isNaN(num1) == true) {
+      alert(num1str + ' is not a number');
+      num1str = prompt('Number to count');
+      num1 = parseInt(num1str);
+    }
+
+    num2 = 0;
+    for (index = 0; index <= num1; index++) {
+      if(index%2 != 0){
+          num2 = num2 + index;
+      }
+    }
+    console.log('Sum of odds = ' + num2);
+
+  </script>
+
 </body>
 </html>

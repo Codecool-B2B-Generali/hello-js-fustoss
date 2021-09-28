@@ -1,0 +1,7 @@
+# a temp könyvtár kihagyása
+temp/
+node_modules/
+
+# a tmp és temp kiterjesztések kihagyása
+*.tmp
+*.temp
